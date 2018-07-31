@@ -25,3 +25,9 @@ awk '/\[/{printf "%s",$0;next} 1' "$META" | tee "$META" > /dev/null
 echo Indenting
 sed -i.bak '/^[^{}]/{s/^/  /;}' "$META"
 rm "$META.bak"
+
+echo Results
+echo ""
+echo "$TEMP"
+echo ""
+echo "$META"
