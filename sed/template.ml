@@ -1,4 +1,8 @@
-let plus x y = "Replace this string by your implementation." 
-let minus x y = "Replace this string by your implementation." 
-let concat x y = "Replace this string by your implementation." 
-let recursive x = "Replace this string by your implementation." 
+let plus x y = "CHANGED"
+
+let minus x y = "CHANGED"
+
+let concat x y = "CHANGED"
+
+let recursive x = "CHANGED"
+

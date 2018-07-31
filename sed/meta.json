@@ -1,1 +1,9 @@
-{"learnocaml_version":"2","kind":"exercise","stars":2,"title":"Adaptsed","short_description":"AdaptsedsothatitworksonOSX","identifier":"sed","authors":[["Me","me@myself.fr"]]}
+{
+  "learnocaml_version":"2",
+  "kind":"exercise",
+  "stars":2,
+  "title":"Adapt sed",
+  "short_description":"Adapt sed so that it works on OS X",
+  "identifier":"sed",
+  "authors":[["Me","me@myself.fr"]]
+}

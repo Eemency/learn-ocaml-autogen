@@ -4,6 +4,8 @@ DIR=sed
 META=$DIR/meta.json
 TEMP=$DIR/template.ml
 
+cp ~/sed/template.ml ~/sed/meta.json sed
+
 echo "$TEMP"
 echo Removing trailing whitespaces
 sed -i.bak -E 's/[ \t]+$//' "$TEMP"
@@ -21,7 +23,7 @@ sed -i.bak $'s/}/\\\n}/' "$META"
 echo Breaking lines
 sed -i.bak $'s/,"/,\\\n"/g' "$META"
 echo Sticking back lists
-awk '/\[/{printf "%s",$0;next} 1' "$META" | tee "$META" > /dev/null
+awk '/\[/{printf "%s",$0;next} 1' "$META" | tee "$META" #> /dev/null
 echo Indenting
 sed -i.bak '/^[^{}]/{s/^/  /;}' "$META"
 rm "$META.bak"
