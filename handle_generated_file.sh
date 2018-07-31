@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DIR=.
+DIR=sed
 META=$DIR/meta.json
 TEMP=$DIR/template.ml
 
