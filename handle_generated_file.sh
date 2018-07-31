@@ -23,7 +23,7 @@ sed -i.bak $'s/,"/,\\\n"/g' "$META"
 echo Sticking back lists
 awk '/\[/{printf "%s",$0;next} 1' "$META" | tee "$META" > /dev/null
 echo Indenting
-sed -i.bak '/^[^{}]/{s/^/  /;}' "$META"
+sed -i.bak -E '/^[^{}]/{s/^/  /;}' "$META"
 rm "$META.bak"
 
 echo Results
