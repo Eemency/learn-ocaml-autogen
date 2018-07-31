@@ -28,6 +28,6 @@ rm "$META.bak"
 
 echo Results
 echo ""
-echo "$TEMP"
+cat "$TEMP"
 echo ""
-echo "$META"
+cat "$META"
