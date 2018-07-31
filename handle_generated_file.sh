@@ -8,9 +8,9 @@ echo "$TEMP"
 echo Removing trailing whitespaces
 sed -i.bak -E 's/[ \t]+$//' "$TEMP"
 echo Changing fill
-sed -i.bak -E 's/Replace this string by your implementation./CHANGED/' "$TEMP"
-echo Adding line breaks
-sed -i.bak -E '/CHANGED/G' "$TEMP"
+sed -i.bak -E 's/Replace this string by your implementation./CHANGED/; /CHANGED/G' "$TEMP"
+#echo Adding line breaks
+#sed -i.bak -E '/CHANGED/G' "$TEMP"
 rm "$TEMP.bak"
 
 echo "$META"
