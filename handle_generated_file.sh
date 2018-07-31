@@ -17,7 +17,7 @@ echo "$META"
 echo Spreading left bracket
 sed -i.bak $'s/{"/{\\\n"/' "$META"
 echo Spreading right bracket
-sed -i.bak $'s/}/\\\n}/' "$META"
+sed -i $'s/}/\\\n}/' "$META"
 echo Breaking lines
 sed -i.bak $'s/,"/,\\\n"/g' "$META"
 echo Sticking back lists
