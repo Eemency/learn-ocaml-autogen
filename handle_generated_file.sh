@@ -4,8 +4,6 @@ DIR=sed
 META=$DIR/meta.json
 TEMP=$DIR/template.ml
 
-cp ~/sed/template.ml ~/sed/meta.json sed
-
 echo "$TEMP"
 echo Removing trailing whitespaces
 sed -i.bak -E 's/[ \t]+$//' "$TEMP"
