@@ -1,5 +1,5 @@
 language: bash
-script: bash -ex handle_generated_file.sh
+script: bash -ex sed/handle_generated_file.sh
 os:
   - linux
   - osx

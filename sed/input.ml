@@ -5,7 +5,7 @@ let%meta identifier = "sed"
 let%meta stars = 2
 let%meta title = "Adapt sed"
 let%meta short_description = "Adapt sed so that it works on OS X"
-let%meta author = []
+let%meta authors = [("Me", "me@myself.fr")]
 
 let plus (x : int) (y : int) : int = x + y
 
