@@ -14,10 +14,10 @@ sed -i.bak -E 's/Replace this string by your implementation./CHANGED/; /CHANGED/
 rm "$TEMP.bak"
 
 echo "$META"
-echo Spreading left bracket
-sed -i.bak $'s/{"/{\\\n"/' "$META"
-echo Spreading right bracket
-sed -i.bak $'s/}/\\\n}/' "$META"
+echo Spreading brackets
+sed -i.bak $'s/{"/{\\\n"/; s/}/\\\n}/' "$META"
+#echo Spreading right bracket
+#sed -i.bak $'s/}/\\\n}/' "$META"
 echo Breaking lines
 sed -i.bak $'s/,"/,\\\n"/g' "$META"
 echo Sticking back lists
