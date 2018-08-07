@@ -12,6 +12,21 @@ install_bubblewrap_on_osx () {
   brew install ansible
 }
 
+install_deps () {
+  opam install . -y --deps
+  eval $(opam env)
+}
+
+install_learnocaml () {
+  cd ..
+  git clone --depth=50 https://github.com/ocaml-sf/learn-ocaml.git
+  cd learn-ocaml
+  install_deps
+  make PROCESSING_JOBS=1
+  make opaminstall
+  cd ../learn-ocaml-autogen
+}
+
 case $TRAVIS_OS_NAME in
   linux) install_bubblewrap_on_linux; ROOT=home;;
   osx) install_bubblewrap_on_osx; ROOT=Users;;
@@ -21,6 +36,6 @@ opam install -y opam-devel
 sudo cp /$ROOT/travis/.opam/4.05.0/lib/opam-devel/* /usr/local/bin
 hash -r
 opam upgrade -y || true
-opam install . -y --deps
-eval $(opam env)
-make test
+install_deps
+install_learnocaml
+make test # && make server
